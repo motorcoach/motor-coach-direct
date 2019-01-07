@@ -1,14 +1,14 @@
 {
-  "main.css": "/motor-coach-direct/static/css/main.0f182a3a.chunk.css",
-  "main.js": "/motor-coach-direct/static/js/main.35a623c1.chunk.js",
-  "main.js.map": "/motor-coach-direct/static/js/main.35a623c1.chunk.js.map",
-  "static/js/1.fa92c112.chunk.js": "/motor-coach-direct/static/js/1.fa92c112.chunk.js",
-  "static/js/1.fa92c112.chunk.js.map": "/motor-coach-direct/static/js/1.fa92c112.chunk.js.map",
+  "main.css": "/motor-coach-direct/static/css/main.7e34a3fb.chunk.css",
+  "main.js": "/motor-coach-direct/static/js/main.c382ba63.chunk.js",
+  "main.js.map": "/motor-coach-direct/static/js/main.c382ba63.chunk.js.map",
+  "static/js/1.0c558094.chunk.js": "/motor-coach-direct/static/js/1.0c558094.chunk.js",
+  "static/js/1.0c558094.chunk.js.map": "/motor-coach-direct/static/js/1.0c558094.chunk.js.map",
   "runtime~main.js": "/motor-coach-direct/static/js/runtime~main.eca59dba.js",
   "runtime~main.js.map": "/motor-coach-direct/static/js/runtime~main.eca59dba.js.map",
-  "static/media/logo.svg": "/motor-coach-direct/static/media/logo.5d5d9eef.svg",
-  "static/css/main.0f182a3a.chunk.css.map": "/motor-coach-direct/static/css/main.0f182a3a.chunk.css.map",
+  "static/media/white-logo.png": "/motor-coach-direct/static/media/white-logo.05c454ef.png",
+  "static/css/main.7e34a3fb.chunk.css.map": "/motor-coach-direct/static/css/main.7e34a3fb.chunk.css.map",
   "index.html": "/motor-coach-direct/index.html",
-  "precache-manifest.0b89bd264f16bf3f9426b211228039f1.js": "/motor-coach-direct/precache-manifest.0b89bd264f16bf3f9426b211228039f1.js",
+  "precache-manifest.fcb7ad685d1d683f5c52d2e12606b723.js": "/motor-coach-direct/precache-manifest.fcb7ad685d1d683f5c52d2e12606b723.js",
   "service-worker.js": "/motor-coach-direct/service-worker.js"
 }
