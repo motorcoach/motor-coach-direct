@@ -1,28 +1,34 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+import Home from './pages/home'
+import Card from './pages/card'
+import Other from './pages/other'
+import Start from './pages/start'
+import Header from './components/header'
+import { BrowserRouter as Router, Route } from "react-router-dom"
+import fleetwood_paceArrow from './img/fleetwood_pace-arrow.png'
+import fleetwood_discovery from './img/fleetwood_discovery.png'
+import logo from './img/white-logo.svg'
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    
+    
+  }
+  
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router basename={process.env.PUBLIC_URL}>
+        <div className="App">                
+          <Route exact path="/" component={Home} />
+          <Route path="/card" component={Card} />
+          <Route path="/other" component={Other} />
+          <Route path="/start" component={Start} />          
+        </div>
+      </Router>
     );
   }
 }
 
-export default App;
+export default App
