@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/motor-coach-direct/static/media/fleetwood.f9ac5623.png"
   },
   {
-    "revision": "fefdd2f0205c3eb07870",
+    "revision": "45a0f78c829eb1e435c0",
     "url": "/motor-coach-direct/static/css/main.b381027b.chunk.css"
   },
   {
@@ -40,8 +40,8 @@ self.__precacheManifest = [
     "url": "/motor-coach-direct/static/media/EntegraCoach.92904f31.png"
   },
   {
-    "revision": "fefdd2f0205c3eb07870",
-    "url": "/motor-coach-direct/static/js/main.fefdd2f0.chunk.js"
+    "revision": "45a0f78c829eb1e435c0",
+    "url": "/motor-coach-direct/static/js/main.45a0f78c.chunk.js"
   },
   {
     "revision": "a570bf2ce6a98b6c07d0ce19be50d2d0",
@@ -80,7 +80,7 @@ self.__precacheManifest = [
     "url": "/motor-coach-direct/static/media/dynaquest XL.45ae5515.png"
   },
   {
-    "revision": "c767b265f423ee347cd9a5c84622630e",
+    "revision": "c53bf90f2b5620a0b664b053642943f6",
     "url": "/motor-coach-direct/index.html"
   }
 ];

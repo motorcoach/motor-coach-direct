@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/motor-coach-direct/precache-manifest.4bd69d8ca55c81c978739a2ab96e58d7.js"
+  "/motor-coach-direct/precache-manifest.d63b8074fb2e12d2670b99f838f98c41.js"
 );
 
 workbox.clientsClaim();
