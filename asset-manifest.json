@@ -1,7 +1,7 @@
 {
   "main.css": "/motor-coach-direct/static/css/main.ec235f72.chunk.css",
-  "main.js": "/motor-coach-direct/static/js/main.688fa388.chunk.js",
-  "main.js.map": "/motor-coach-direct/static/js/main.688fa388.chunk.js.map",
+  "main.js": "/motor-coach-direct/static/js/main.972d9e72.chunk.js",
+  "main.js.map": "/motor-coach-direct/static/js/main.972d9e72.chunk.js.map",
   "static/js/1.2d9b1a70.chunk.js": "/motor-coach-direct/static/js/1.2d9b1a70.chunk.js",
   "static/js/1.2d9b1a70.chunk.js.map": "/motor-coach-direct/static/js/1.2d9b1a70.chunk.js.map",
   "runtime~main.js": "/motor-coach-direct/static/js/runtime~main.eca59dba.js",
@@ -30,6 +30,6 @@
   "static/media/2019 Fleetwood Pace Arrow LXE.png": "/motor-coach-direct/static/media/2019 Fleetwood Pace Arrow LXE.e7affef6.png",
   "static/css/main.ec235f72.chunk.css.map": "/motor-coach-direct/static/css/main.ec235f72.chunk.css.map",
   "index.html": "/motor-coach-direct/index.html",
-  "precache-manifest.2cfdd4faf90f4d51ac385ff73f6e31c9.js": "/motor-coach-direct/precache-manifest.2cfdd4faf90f4d51ac385ff73f6e31c9.js",
+  "precache-manifest.d5d130a40b8917c81274abef98b154b9.js": "/motor-coach-direct/precache-manifest.d5d130a40b8917c81274abef98b154b9.js",
   "service-worker.js": "/motor-coach-direct/service-worker.js"
 }
