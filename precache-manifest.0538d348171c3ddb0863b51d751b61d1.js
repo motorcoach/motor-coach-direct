@@ -104,7 +104,7 @@ self.__precacheManifest = [
     "url": "/motor-coach-direct/static/media/2019 Fleetwood Pace Arrow LXE.e7affef6.png"
   },
   {
-    "revision": "efe279d127238b277e3619befa15e709",
+    "revision": "372bc1618a1c0ab68798f67c06d0eaa9",
     "url": "/motor-coach-direct/index.html"
   }
 ];
