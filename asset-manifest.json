@@ -1,7 +1,7 @@
 {
   "main.css": "/motor-coach-direct/static/css/main.c5d36ba5.chunk.css",
-  "main.js": "/motor-coach-direct/static/js/main.6422bf8a.chunk.js",
-  "main.js.map": "/motor-coach-direct/static/js/main.6422bf8a.chunk.js.map",
+  "main.js": "/motor-coach-direct/static/js/main.f58ff56d.chunk.js",
+  "main.js.map": "/motor-coach-direct/static/js/main.f58ff56d.chunk.js.map",
   "static/js/1.335b565d.chunk.js": "/motor-coach-direct/static/js/1.335b565d.chunk.js",
   "static/js/1.335b565d.chunk.js.map": "/motor-coach-direct/static/js/1.335b565d.chunk.js.map",
   "runtime~main.js": "/motor-coach-direct/static/js/runtime~main.eca59dba.js",
@@ -42,10 +42,10 @@
   "static/media/2019 Tiffin Allegro Bus.png": "/motor-coach-direct/static/media/2019 Tiffin Allegro Bus.4b12d0b6.png",
   "static/media/2019 Tiffin Allegro Red.png": "/motor-coach-direct/static/media/2019 Tiffin Allegro Red.b49d8199.png",
   "static/media/2019 Tiffin Open Road Allegro.png": "/motor-coach-direct/static/media/2019 Tiffin Open Road Allegro.be97bc90.png",
-  "static/media/2019 Tiffin Phaeton.png": "/motor-coach-direct/static/media/2019 Tiffin Phaeton.dc1090ca.png",
+  "static/media/2019 Tiffin Phaeton.png": "/motor-coach-direct/static/media/2019 Tiffin Phaeton.f612ea0b.png",
   "static/media/2019 Tiffin Zephyr.png": "/motor-coach-direct/static/media/2019 Tiffin Zephyr.99556f8f.png",
   "static/css/main.c5d36ba5.chunk.css.map": "/motor-coach-direct/static/css/main.c5d36ba5.chunk.css.map",
   "index.html": "/motor-coach-direct/index.html",
-  "precache-manifest.ba09e38a80c50e71c32371db71e11f61.js": "/motor-coach-direct/precache-manifest.ba09e38a80c50e71c32371db71e11f61.js",
+  "precache-manifest.0036fcb23af17c4154205382f2e103ac.js": "/motor-coach-direct/precache-manifest.0036fcb23af17c4154205382f2e103ac.js",
   "service-worker.js": "/motor-coach-direct/service-worker.js"
 }
