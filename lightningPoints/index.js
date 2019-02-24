@@ -10,7 +10,7 @@ var CHILD_NUM = 2;
 var BACKGROUND_COLOR = 'rgba(0, 15, 20, 0.8)';
 
 // Color
-var H = 195;
+var H = 55;
 var S = 100;
 var L_MAX = 85;
 var L_MIN = 45;
