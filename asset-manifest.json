@@ -1,7 +1,7 @@
 {
   "main.css": "/motor-coach-direct/static/css/main.d96c5273.chunk.css",
-  "main.js": "/motor-coach-direct/static/js/main.b433547a.chunk.js",
-  "main.js.map": "/motor-coach-direct/static/js/main.b433547a.chunk.js.map",
+  "main.js": "/motor-coach-direct/static/js/main.2ab80cac.chunk.js",
+  "main.js.map": "/motor-coach-direct/static/js/main.2ab80cac.chunk.js.map",
   "static/js/1.97e0cbc5.chunk.js": "/motor-coach-direct/static/js/1.97e0cbc5.chunk.js",
   "static/js/1.97e0cbc5.chunk.js.map": "/motor-coach-direct/static/js/1.97e0cbc5.chunk.js.map",
   "runtime~main.js": "/motor-coach-direct/static/js/runtime~main.eca59dba.js",
@@ -9,7 +9,7 @@
   "static/media/2019 Fleetwood Discovery.png": "/motor-coach-direct/static/media/2019 Fleetwood Discovery.240901f4.png",
   "static/media/white-logo.svg": "/motor-coach-direct/static/media/white-logo.b48ab955.svg",
   "static/media/american eagle 45T.png": "/motor-coach-direct/static/media/american eagle 45T.7e5ce48c.png",
-  "static/media/american_coach_logo.svg": "/motor-coach-direct/static/media/american_coach_logo.ec0bf92b.svg",
+  "static/media/american_coach_logo.png": "/motor-coach-direct/static/media/american_coach_logo.7b5ed108.png",
   "static/media/dynamax.png": "/motor-coach-direct/static/media/dynamax.49d5c81b.png",
   "static/media/EntegraCoach.png": "/motor-coach-direct/static/media/EntegraCoach.92904f31.png",
   "static/media/fleetwood.png": "/motor-coach-direct/static/media/fleetwood.f9ac5623.png",
@@ -78,10 +78,10 @@
   "static/media/2019 Winnebago Vista.png": "/motor-coach-direct/static/media/2019 Winnebago Vista.5b2ec3d0.png",
   "static/media/2019 Winnebago Sightseer.png": "/motor-coach-direct/static/media/2019 Winnebago Sightseer.7438dd8c.png",
   "static/media/2019 Winnebago Sunova.png": "/motor-coach-direct/static/media/2019 Winnebago Sunova.6d6f77c2.png",
-  "static/media/american_coach_logo.png": "/motor-coach-direct/static/media/american_coach_logo.7b5ed108.png",
+  "static/media/american_coach_logo.svg": "/motor-coach-direct/static/media/american_coach_logo.ec0bf92b.svg",
   "static/media/yellow-logo.svg": "/motor-coach-direct/static/media/yellow-logo.b8e7daf8.svg",
   "static/css/main.d96c5273.chunk.css.map": "/motor-coach-direct/static/css/main.d96c5273.chunk.css.map",
   "index.html": "/motor-coach-direct/index.html",
-  "precache-manifest.92bb0802f4b0eebbc7adaeb8416a7c87.js": "/motor-coach-direct/precache-manifest.92bb0802f4b0eebbc7adaeb8416a7c87.js",
+  "precache-manifest.2bd5c20066b535de2806f3e0e34da76f.js": "/motor-coach-direct/precache-manifest.2bd5c20066b535de2806f3e0e34da76f.js",
   "service-worker.js": "/motor-coach-direct/service-worker.js"
 }
