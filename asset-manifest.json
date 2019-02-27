@@ -1,7 +1,7 @@
 {
   "main.css": "/motor-coach-direct/static/css/main.0194e83c.chunk.css",
-  "main.js": "/motor-coach-direct/static/js/main.e1fd5133.chunk.js",
-  "main.js.map": "/motor-coach-direct/static/js/main.e1fd5133.chunk.js.map",
+  "main.js": "/motor-coach-direct/static/js/main.3d12cbaa.chunk.js",
+  "main.js.map": "/motor-coach-direct/static/js/main.3d12cbaa.chunk.js.map",
   "static/css/1.7d755b48.chunk.css": "/motor-coach-direct/static/css/1.7d755b48.chunk.css",
   "static/js/1.089d612a.chunk.js": "/motor-coach-direct/static/js/1.089d612a.chunk.js",
   "static/js/1.089d612a.chunk.js.map": "/motor-coach-direct/static/js/1.089d612a.chunk.js.map",
@@ -88,11 +88,11 @@
   "static/media/Force-37BH.png": "/motor-coach-direct/static/media/Force-37BH.f8e2b818.png",
   "static/media/Force-37TS.png": "/motor-coach-direct/static/media/Force-37TS.466d6e82.png",
   "static/media/2018_Entegra_Anthem_42DEQ.png": "/motor-coach-direct/static/media/2018_Entegra_Anthem_42DEQ.8b96cc3d.png",
-  "static/media/slick-theme.css": "/motor-coach-direct/static/media/slick.f97e3bbf.svg",
+  "static/media/slick-theme.css": "/motor-coach-direct/static/media/slick.d41f55a7.ttf",
   "static/media/american_coach_logo.svg": "/motor-coach-direct/static/media/american_coach_logo.ec0bf92b.svg",
   "static/css/main.0194e83c.chunk.css.map": "/motor-coach-direct/static/css/main.0194e83c.chunk.css.map",
   "static/css/1.7d755b48.chunk.css.map": "/motor-coach-direct/static/css/1.7d755b48.chunk.css.map",
   "index.html": "/motor-coach-direct/index.html",
-  "precache-manifest.0bae5b146bd9c29cc5004bc948c2176e.js": "/motor-coach-direct/precache-manifest.0bae5b146bd9c29cc5004bc948c2176e.js",
+  "precache-manifest.34de7c49cea1606166aac1883b10d812.js": "/motor-coach-direct/precache-manifest.34de7c49cea1606166aac1883b10d812.js",
   "service-worker.js": "/motor-coach-direct/service-worker.js"
 }
