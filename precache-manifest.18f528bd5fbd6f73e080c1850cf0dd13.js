@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/motor-coach-direct/static/media/DynaQuestXL Briarwood.8816f4b0.png"
   },
   {
-    "revision": "0a922426bd441609a480",
+    "revision": "6cc70ff8caa73ef2c112",
     "url": "/motor-coach-direct/static/css/main.95810b01.chunk.css"
   },
   {
@@ -24,16 +24,16 @@ self.__precacheManifest = [
     "url": "/motor-coach-direct/static/media/white-logo.b48ab955.svg"
   },
   {
-    "revision": "b7c9e1e479de3b53f1e4e30ebac2403a",
-    "url": "/motor-coach-direct/static/media/slick.b7c9e1e4.woff"
-  },
-  {
     "revision": "ced611daf7709cc778da928fec876475",
     "url": "/motor-coach-direct/static/media/slick.ced611da.eot"
   },
   {
     "revision": "d41f55a78e6f49a5512878df1737e58a",
     "url": "/motor-coach-direct/static/media/slick.d41f55a7.ttf"
+  },
+  {
+    "revision": "b7c9e1e479de3b53f1e4e30ebac2403a",
+    "url": "/motor-coach-direct/static/media/slick.b7c9e1e4.woff"
   },
   {
     "revision": "f97e3bbf73254b0112091d0192f17aec",
@@ -296,8 +296,8 @@ self.__precacheManifest = [
     "url": "/motor-coach-direct/static/media/DynaQuestXL Midnight.653acefb.png"
   },
   {
-    "revision": "0a922426bd441609a480",
-    "url": "/motor-coach-direct/static/js/main.0a922426.chunk.js"
+    "revision": "6cc70ff8caa73ef2c112",
+    "url": "/motor-coach-direct/static/js/main.6cc70ff8.chunk.js"
   },
   {
     "revision": "0302a6bf83deddff2c72b6e5dc9f0123",
@@ -592,7 +592,7 @@ self.__precacheManifest = [
     "url": "/motor-coach-direct/static/css/1.849ab8d8.chunk.css"
   },
   {
-    "revision": "3f5111ec5b37d9926c4411923bafe0ee",
+    "revision": "bb0d2e8ba92b9cd09f0c9bd7c01fd90c",
     "url": "/motor-coach-direct/index.html"
   }
 ];

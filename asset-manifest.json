@@ -1,7 +1,7 @@
 {
   "main.css": "/motor-coach-direct/static/css/main.95810b01.chunk.css",
-  "main.js": "/motor-coach-direct/static/js/main.0a922426.chunk.js",
-  "main.js.map": "/motor-coach-direct/static/js/main.0a922426.chunk.js.map",
+  "main.js": "/motor-coach-direct/static/js/main.6cc70ff8.chunk.js",
+  "main.js.map": "/motor-coach-direct/static/js/main.6cc70ff8.chunk.js.map",
   "static/css/1.849ab8d8.chunk.css": "/motor-coach-direct/static/css/1.849ab8d8.chunk.css",
   "static/js/1.c80fa9b2.chunk.js": "/motor-coach-direct/static/js/1.c80fa9b2.chunk.js",
   "static/js/1.c80fa9b2.chunk.js.map": "/motor-coach-direct/static/js/1.c80fa9b2.chunk.js.map",
@@ -9,7 +9,7 @@
   "runtime~main.js.map": "/motor-coach-direct/static/js/runtime~main.eca59dba.js.map",
   "static/media/2018 american eagle.png": "/motor-coach-direct/static/media/2018 american eagle.4414ad14.png",
   "static/media/white-logo.svg": "/motor-coach-direct/static/media/white-logo.b48ab955.svg",
-  "static/media/slick-theme.css": "/motor-coach-direct/static/media/slick.b7c9e1e4.woff",
+  "static/media/slick-theme.css": "/motor-coach-direct/static/media/slick.ced611da.eot",
   "static/media/american dream 45A.png": "/motor-coach-direct/static/media/american dream 45A.a97f21bc.png",
   "static/media/american eagle 45A.png": "/motor-coach-direct/static/media/american eagle 45A.fce3ca21.png",
   "static/media/american eagle 45C.png": "/motor-coach-direct/static/media/american eagle 45C.d0c37695.png",
@@ -150,6 +150,6 @@
   "static/css/main.95810b01.chunk.css.map": "/motor-coach-direct/static/css/main.95810b01.chunk.css.map",
   "static/css/1.849ab8d8.chunk.css.map": "/motor-coach-direct/static/css/1.849ab8d8.chunk.css.map",
   "index.html": "/motor-coach-direct/index.html",
-  "precache-manifest.6151693f4bdffaf3484cbbb1ec1cbe2b.js": "/motor-coach-direct/precache-manifest.6151693f4bdffaf3484cbbb1ec1cbe2b.js",
+  "precache-manifest.18f528bd5fbd6f73e080c1850cf0dd13.js": "/motor-coach-direct/precache-manifest.18f528bd5fbd6f73e080c1850cf0dd13.js",
   "service-worker.js": "/motor-coach-direct/service-worker.js"
 }
