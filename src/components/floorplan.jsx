@@ -9,7 +9,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import MakesModels from '../data/makesModels.json';
 
-
 const styles = theme => ({
     root: {
         ...theme.mixins.gutters(),
@@ -21,25 +20,26 @@ class Floorplan extends React.Component {
     state = {
         dieselOrGas: sessionStorage.getItem("dieselOrGas"),      
         value: sessionStorage.getItem("floorplan"), 
-        manufacturer: sessionStorage.getItem("manufacturer"),
+        make: sessionStorage.getItem("make"),
         model: sessionStorage.getItem("model"),        
         year: sessionStorage.getItem('year')
     }
 
     handleChange = event => {
-        this.setState({ value: event.target.value });
+        this.setState({ value: event.target.value }, () => {
+            this.props.handlerToUpdate( this.state.year + ' ' + this.state.model + ' ' + this.state.value ); 
+        });        
         sessionStorage.setItem("floorplan", event.target.value);
-      };
+    };
 
     render() {
         const { classes } = this.props;        
         const handleToUpdate = this.props.handlerToUpdate;   
-        
         if (this.state.dieselOrGas &&
-            this.state.manufacturer &&
+            this.state.make &&
             this.state.year &&
             this.state.model) {
-            const floorplans = MakesModels[this.state.dieselOrGas][this.state.manufacturer][this.state.year][this.state.model].map((floorplan, idx) => {                
+            const floorplans = MakesModels[this.state.dieselOrGas][this.state.make][this.state.year][this.state.model].map((floorplan, idx) => {                
                 return (    
                     <FormControlLabel
                         key={idx}
@@ -50,7 +50,6 @@ class Floorplan extends React.Component {
                         onChange={this.handleChange}
                     />
                 );
-                
             })            
             return (                
                 <Paper className={classes.root} elevation={1}>

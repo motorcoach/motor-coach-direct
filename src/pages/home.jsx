@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 import Benefits from '../components/benefits'
 import Header from '../components/header'
-import fleetwood_paceArrow from '../img/fleetwood_pace-arrow.png'
+import logo from '../img/white-logo.svg'
+import Bar from '../components/bar'
+import liberty from '../img/motorcoach-direct/Liberty-Coach.jpg'
 
-class Home extends Component {
-  state = {
-    headerImage: fleetwood_paceArrow
-  }
+class Home extends Component {  
 
   render() {
     return (
-      <div>
-        <Header />
+      <div >
+        <Bar/>
+        <Header headerImage={logo} />
         <Benefits />
       </div>
     );
   }
 }
   
-  export default Home;
+export default Home;

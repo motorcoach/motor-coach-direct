@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
 import logo from '../img/white-logo.svg'
-import Context from '../models/context'
-import Container from '../models/headerContainer'
 
-class Header extends Component { 
-   
-    
-    render() {       
-        let {headerImage} = this.props;      
-        return (
-            
-            <header className="App-header"> 
-                <img src={headerImage} className="App-headerImage" />                    
-                              
-                <img src={logo} className="App-logo" alt="logo" />
-            </header>
+import liberty from '../img/motorcoach-direct/Liberty-Coach.jpg'
+
+class Header extends Component {         
+    render() {    
+        let {headerImage, scene} = this.props;   
+          
+        return (            
+            <div>                
+                <header className="App-header">   
+                    <img src={headerImage} className="App-headerImage" alt="" />                                                                                                                                           
+                    <img src={logo} className="App-logo-hide" alt="motorcoach-direct" />
+                </header>
+            </div>
         );
     }
 }
-
 export default Header

@@ -1,20 +1,21 @@
-import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormLabel from '@material-ui/core/FormLabel';
-import Grid from '@material-ui/core/Grid';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import Paper from '@material-ui/core/Paper';
-import PropTypes from 'prop-types';
-import Select from '@material-ui/core/Select';
-import Switch from '@material-ui/core/Switch';
-import Typography from '@material-ui/core/Typography';
-import blue from '@material-ui/core/colors/blue';
-import pink from '@material-ui/core/colors/pink';
-import purple from '@material-ui/core/colors/purple';
-import Contact from '../components/contact';
+import React, { Component } from 'react'
+import { withStyles } from '@material-ui/core/styles'
+import { withRouter } from "react-router"
+import FormLabel from '@material-ui/core/FormLabel'
+import Grid from '@material-ui/core/Grid'
+import Paper from '@material-ui/core/Paper'
+import PropTypes from 'prop-types'
+import Typography from '@material-ui/core/Typography'
+import blue from '@material-ui/core/colors/blue'
+import pink from '@material-ui/core/colors/pink'
+import purple from '@material-ui/core/colors/purple'
+import Financials from './financials'
+import Button from '@material-ui/core/Button'
+import Floorplans from './floorplans'
+import Paints from './paints'
+import Woods from './woods'
+import Years from './years'
+import OptionsMap from '../data/optionsMap'
 
 const styles = theme => ({
     root: {
@@ -24,6 +25,10 @@ const styles = theme => ({
     formControl: {
       margin: theme.spacing.unit,
       minWidth: 120,
+    },
+    disclaimer: {
+      fontSize:13,
+      marginBottom: theme.spacing.unit * 2
     },
     selectEmpty: {
       marginTop: theme.spacing.unit * 2,
@@ -77,10 +82,10 @@ const styles = theme => ({
     iOSIconChecked: {
       boxShadow: theme.shadows[1],
     },
-    selectEmpty: {
-        marginTop: theme.spacing.unit * 2,
-    },
-  });
+    grid: {
+      marginBottom: theme.spacing.unit * 2
+    }
+  })
 
   class Options extends Component {
     state = {
@@ -91,227 +96,85 @@ const styles = theme => ({
       checkedFridge: true,
       checkedSatelite: true,
       checkedCollision: true
-    };  
+    }
   
     handleChange = event => {
-      this.setState({ [event.target.name]: event.target.value });
-    };
+      this.setState({ [event.target.name]: event.target.value })
+    }
   
     handleChangeSwitch = name => event => {
-      this.setState({ [name]: event.target.checked });
-      
-    };
-  
-    handleSubmit = event => {
-      // https://us-central1-winter-agency-229213.cloudfunctions.net/function-2
-      
-      
-          
+      this.setState({ [name]: event.target.checked })
     }
+  
+    handleBack = event => {
+      this.props.history.push('/start/');
+    }
+
+    handlePaintsHeader = (paint) => {   
+      this.props.handlerToUpdate(paint);       
+    } 
+
+    handleWoodsHeader = (wood) => {
+      // this.props.handlerToUpdate ( wood )
+    }
+
+    handleFloorplansHeader = (floorplans) => {
+      console.log(floorplans)
+      this.props.handlerToUpdate(floorplans)
+    }
+
     render() {
-      const { classes } = this.props; 
-      var parser = document.createElement('a');
-      parser.href = window.location.href;
-      // parser.protocol; // => "http:"
-      // parser.hostname; // => "example.com"
-      // parser.port;     // => "3000"
-      // parser.pathname; // => "/pathname/"
-      // parser.search;   // => "?search=test"
-      // parser.hash;     // => "#hash"
-      // parser.host;     // => "example.com:3000"
-      // parser.pathname.split('/').splice(2)
-      let paths = parser.pathname.split('/') 
-      paths.shift();
-      paths = paths.splice(2);
+      const { classes } = this.props;    
+      const path = this.props.location.pathname.split('/')
+      const dieselOrGas = path[2].replace(/_/, ' '),
+            make = path[3].replace(/_/, ' '),
+            year = path[4],
+            model = path[5].replace(/_/g, ' ')
+      const options = OptionsMap[make][year].map((option, idx) => {
+        let source = {}
+        switch(option.source) {
+          case 'Years':
+            source = <Years handlerToUpdate = {this.handleYearsHeader} dieselOrGas={dieselOrGas} make={make} model={model} />
+          break
+          case 'Floorplans':
+            source = <Floorplans handlerToUpdate = {this.handlePaintsHeader} make={make} year={year} model={model} /> 
+          break
+          case 'Paints':
+            source = <Paints handlerToUpdate = {this.handlePaintsHeader} make={make} year={year} model={model} /> 
+          break
+          case 'Woods':
+            source = <Woods handlerToUpdate = {this.handlePaintsHeader} make={make} year={year} />
+          break
+        }
+        return (
+          <Grid item xs={option.size} className={classes.grid} key={idx}>
+            <Paper className={classes.paper}>
+              <Typography component={'span'} variant="h6" >
+                  {option.name}
+              </Typography>
+              {source}              
+            </Paper>
+          </Grid>
+        )
+      })
       return (
-          <Paper className={classes.root} elevation={1}>
+          <Paper className={classes.root} elevation={1}>            
             <Typography component={'span'} variant="h5" >
-            {         
-              paths.map((path, idx) => {
-                if (idx === paths.length - 1) 
-                  return path          
-                else 
-                  return path.replace(/([A-Z])/g, ' $1').trim() + ' ';
-              })
-            }
+              {make + ' ' + year + ' ' + model}
             </Typography>    
             <form className={classes.root} autoComplete="off">
-            <Grid container spacing={24}>
-              <Grid item xs={6}>
-                <Paper className={classes.paper}>
-                  <FormControl className={classes.formControl}>
-                    <InputLabel htmlFor="interiorColor">interior color</InputLabel>
-                    <Select
-                      value={this.state.interiorColor}
-                      onChange={this.handleChange}
-                      inputProps={{
-                        name: 'interiorColor',
-                        id: 'interiorColor',
-                      }}
-                    >
-                      <MenuItem value="">
-                        <em>None</em>
-                      </MenuItem>
-                      <MenuItem value="blue">Blue</MenuItem>
-                      <MenuItem value="green">Green</MenuItem>
-                      <MenuItem value="red">Red</MenuItem>
-                    </Select>
-                  </FormControl>
-                </Paper>
-              </Grid>
-              
-              <Grid item xs={6}>
-                <Paper className={classes.paper}>
-                  <FormControl className={classes.formControl}>
-                    <InputLabel htmlFor="exteriorColor">exterior color</InputLabel>
-                    <Select
-                      value={this.state.exteriorColor}
-                      onChange={this.handleChange}
-                      inputProps={{
-                        name: 'exteriorColor',
-                        id: 'exteriorColor',
-                      }}
-                    >
-                      <MenuItem value="">
-                        <em>None</em>
-                      </MenuItem>
-                      <MenuItem value="blue">Blue</MenuItem>
-                      <MenuItem value="green">Green</MenuItem>
-                      <MenuItem value="red">Red</MenuItem>
-                    </Select>
-                  </FormControl>
-                </Paper>
-              </Grid>
-              <Grid item xs={6}>
-                <Paper className={classes.paper}>
-                <FormLabel component="legend">Bed</FormLabel>
-                <FormControlLabel 
-                  control={
-                    <Switch
-                      classes={{
-                        switchBase: classes.iOSSwitchBase,
-                        bar: classes.iOSBar,
-                        icon: classes.iOSIcon,
-                        iconChecked: classes.iOSIconChecked,
-                        checked: classes.iOSChecked,
-                      }}
-                      
-                      disableRipple
-                      checked={this.state.checkedBed}
-                      onChange={this.handleChangeSwitch('checkedBed')}
-                      value="checkedBed"
-                    />
-                  }
-                label={this.state.checkedBed ? 'King' : 'Queen'}
-                labelPlacement={this.state.checkedBed ? 'start' : 'end'}
-                />
-                </Paper>
-              </Grid>
-              <Grid item xs={6}>
-                <Paper className={classes.paper}>
-                  <FormLabel component="legend">Water Heater System</FormLabel>
-                  <FormControlLabel 
-                  control={
-                    <Switch
-                      classes={{
-                        switchBase: classes.iOSSwitchBase,
-                        bar: classes.iOSBar,
-                        icon: classes.iOSIcon,
-                        iconChecked: classes.iOSIconChecked,
-                        checked: classes.iOSChecked,
-                      }}
-                      
-                      disableRipple
-                      checked={this.state.checkedHeater}
-                      onChange={this.handleChangeSwitch('checkedHeater')}
-                      value="checkedHeater"
-                    />
-                  }
-                label={this.state.checkedHeater ? 'Tank' : 'Tankless'}
-                labelPlacement={this.state.checkedHeater ? 'start' : 'end'}
-                />
-                </Paper>
-              </Grid>
-              <Grid item xs={6}>
-                <Paper className={classes.paper}>
-                  <FormLabel component="legend">Fridge</FormLabel>
-                  <FormControlLabel 
-                  control={
-                    <Switch
-                      classes={{
-                        switchBase: classes.iOSSwitchBase,
-                        bar: classes.iOSBar,
-                        icon: classes.iOSIcon,
-                        iconChecked: classes.iOSIconChecked,
-                        checked: classes.iOSChecked,
-                      }}
-                      
-                      disableRipple
-                      checked={this.state.checkedFridge}
-                      onChange={this.handleChangeSwitch('checkedFridge')}
-                      value="checkedFridge"
-                    />
-                  }
-                label={this.state.checkedFridge ? 'RV' : 'Residential'}
-                labelPlacement={this.state.checkedFridge ? 'start' : 'end'}
-                />
-                </Paper>
-              </Grid>
-              <Grid item xs={6}>
-                <Paper className={classes.paper}>
-                  <FormLabel component="legend">In Motion Satelite</FormLabel>
-                  <FormControlLabel 
-                  control={
-                    <Switch
-                      classes={{
-                        switchBase: classes.iOSSwitchBase,
-                        bar: classes.iOSBar,
-                        icon: classes.iOSIcon,
-                        iconChecked: classes.iOSIconChecked,
-                        checked: classes.iOSChecked,
-                      }}
-                      
-                      disableRipple
-                      checked={this.state.checkedSatelite}
-                      onChange={this.handleChangeSwitch('checkedSatelite')}
-                      value="checkedSatelite"
-                    />
-                  }
-                label={this.state.checkedSatelite ? 'Yes' : 'No'}
-                labelPlacement={this.state.checkedSatelite ? 'start' : 'end'}
-                />
-                </Paper>
-              </Grid>
-              <Grid item xs={6}>
-                <Paper className={classes.paper}>
-                  <FormLabel component="legend">Collision Avoidance System</FormLabel>
-                  <FormControlLabel 
-                  control={
-                    <Switch
-                      classes={{
-                        switchBase: classes.iOSSwitchBase,
-                        bar: classes.iOSBar,
-                        icon: classes.iOSIcon,
-                        iconChecked: classes.iOSIconChecked,
-                        checked: classes.iOSChecked,
-                      }}
-                      
-                      disableRipple
-                      checked={this.state.checkedCollision}
-                      onChange={this.handleChangeSwitch('checkedCollision')}
-                      value="checkedCollision"
-                    />
-                  }
-                label={this.state.checkedCollision ? 'Yes' : 'No'}
-                labelPlacement={this.state.checkedCollision ? 'start' : 'end'}
-                />
-                </Paper>
-              </Grid>
-              <Grid item xs={12}>              
-                <Contact />
+              <Grid container spacing={24}>              
+                {options}
+                <Grid item xs={12} className={classes.grid}>  
+                  <Button                
+                    onClick={this.handleBack}
+                    className={classes.button}
+                  >
+                    Back
+                  </Button>            
+                  <Financials />
                 </Grid>
-            </Grid>
-            
+              </Grid>
             </form>          
           </Paper> 
       );
@@ -321,4 +184,4 @@ const styles = theme => ({
   Options.propTypes = {
     classes: PropTypes.object.isRequired,
   };
-  export default withStyles(styles)(Options);
+  export default withRouter(withStyles(styles)(Options))

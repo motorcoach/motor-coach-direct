@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
 import TextField from '@material-ui/core/TextField';
@@ -10,59 +10,75 @@ import FormControl from '@material-ui/core/FormControl';
 import { withStyles } from '@material-ui/core/styles';
 import Switch from '@material-ui/core/Switch';
 import Grid from '@material-ui/core/Grid';
-import request from 'request';
+import InputLabel from '@material-ui/core/InputLabel';
+import Input from '@material-ui/core/Input';
+import MaskedInput from 'react-text-mask';
 import { withRouter } from "react-router";
+import Financials from './financials';
 
 const styles = theme => ({
     root: {
       ...theme.mixins.gutters(),
       padding: theme.spacing.unit * 2,      
     },
+    button: {
+        marginRight: theme.spacing.unit,
+    },
+    paper: {
+        paddingTop:10,
+        paddingBottom:10,
+    },
 })
+
+function PhoneMask(props) {
+    const { inputRef, ...other } = props;
+  
+    return (
+      <MaskedInput
+        {...other}
+        ref={ref => {
+          inputRef(ref ? ref.inputElement : null);
+        }}
+        mask={['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+        placeholderChar={'\u2000'}
+        showMask
+      />
+    );
+}
+
+PhoneMask.propTypes = {
+    inputRef: PropTypes.func.isRequired,
+};
+
 class Other extends Component {
     state = {
         email: '',
-        manufacturer: '',
+        make: '',
         year: '',
         model: '',
         name: '',
         nextMonthPurchase: false,
         other: '',
-        phone: ''
+        phone: '(   )    -    '
     
+    }
+
+    handleBack = () => {
+      this.props.history.push('/start');
     }
 
     handleChangeSwitch = name => event => {
-        this.setState({ [name]: event.target.checked });    
-    };
-
-    handleChange = name => event => {
-        this.setState({ [name]: event.target.value });
-    };
-    
-    handleSubmit = event => {
-        request.post({
-            url: 'https://us-central1-winter-agency-229213.cloudfunctions.net/sendgridEmail',
-            form: {
-              name: this.state.name,
-              dieselOrGas: sessionStorage.getItem("dieselOrGas"),
-              email: this.state.email,
-              floorplan: sessionStorage.getItem("floorplan"),
-              manufacturer: sessionStorage.getItem("manufacturer"),
-              model: sessionStorage.getItem("model"),
-              newOrPreowned: sessionStorage.getItem("newOrPreowned"),
-              reason: sessionStorage.getItem("reason"),
-              year: sessionStorage.getItem('year')  
-            }
-        }, (err, response, body) => {
-            sessionStorage.clear();
-            this.props.history.push('/');
-        });
+        this.setState({ [name]: event.target.checked })   
     }
 
+    handleChange = name => event => {
+        this.setState({ [name]: event.target.value })
+    }
+
+    
     render() {
         const { classes } = this.props; 
-        const { email, manufacturer, year, model, name, nextMonthPurchase, other, phone } = this.state;
+        const { email, make, year, model, name, nextMonthPurchase, other, phone } = this.state;
         return (
             <Paper className={classes.root} elevation={1}>
                 <Typography component={'span'} variant="h6" >
@@ -76,12 +92,11 @@ your new Coach!
                 <Grid container spacing={24}>
                     <Grid item xs={6}>
                         <TextField
-                            id="manufacturer"
+                            id="make"
                             label="Manufacturer"
                             className={classes.textField}
-                            value={manufacturer}
-                            // error={manufacturer === ''}
-                            onChange={this.handleChange('manufacturer')}
+                            value={make}                            
+                            onChange={this.handleChange('make')}
                             margin="normal"
                         />
                     </Grid>
@@ -90,8 +105,7 @@ your new Coach!
                             id="year"
                             label="Year"
                             className={classes.textField}
-                            value={year}
-                            // error={year === ''}
+                            value={year}                            
                             onChange={this.handleChange('year')}
                             margin="normal"
                         />
@@ -102,7 +116,6 @@ your new Coach!
                             label="Model"
                             className={classes.textField}
                             value={model}
-                            // error={manufacturer === ''}
                             onChange={this.handleChange('model')}
                             margin="normal"
                         />
@@ -113,7 +126,6 @@ your new Coach!
                             label="Other specifications"
                             className={classes.textField}
                             value={other}
-                            // error={manufacturer === ''}
                             onChange={this.handleChange('other')}
                             margin="normal"
                         />
@@ -123,8 +135,7 @@ your new Coach!
                             id="name"
                             label="Name"
                             className={classes.textField}
-                            value={other}
-                            // error={manufacturer === ''}
+                            value={name}
                             onChange={this.handleChange('name')}
                             margin="normal"
                         />
@@ -134,22 +145,22 @@ your new Coach!
                             id="email"
                             label="Email"
                             className={classes.textField}
-                            value={other}
-                            // error={manufacturer === ''}
+                            value={email}
                             onChange={this.handleChange('email')}
                             margin="normal"
                         />
                     </Grid>
                     <Grid item xs={6}>
-                        <TextField
-                            id="phone"
-                            label="Phone"
-                            className={classes.textField}
-                            value={other}
-                            // error={manufacturer === ''}
-                            onChange={this.handleChange('phone')}
-                            margin="normal"
-                        />
+                    <FormControl className={classes.formControl}>
+                        <InputLabel htmlFor="phone">Phone</InputLabel>
+                        <Input
+                          value={phone}
+                          onChange={this.handleChange('phone')}
+                          id="phone"
+                          inputComponent={PhoneMask}
+                          margin="normal"
+                        />      
+                    </FormControl>
                     </Grid>
                     <Grid item xs={6}>
                         <FormLabel component="legend">If we find your Coach are you looking to purchase in the next month?</FormLabel>
@@ -174,15 +185,15 @@ your new Coach!
                         labelPlacement={nextMonthPurchase ? 'start' : 'end'}
                         />
                     </Grid>
-                    <Grid item xs={12}>
-                    <Button 
-                        variant="contained" 
-                        color="primary" 
-                        className={classes.button}
-                        onClick={this.handleSubmit}
-                    >
-                        Submit
-                    </Button> 
+                     
+                    <Grid item xs={12}> 
+                        <Button
+                            onClick={this.handleBack}
+                            className={classes.button}
+                        >
+                        Back
+                        </Button>             
+                        <Financials />
                     </Grid>
                 </Grid>
                 </FormControl>

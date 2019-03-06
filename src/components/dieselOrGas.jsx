@@ -1,33 +1,39 @@
-import React from 'react';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import React from 'react'
+import Radio from '@material-ui/core/Radio'
+import RadioGroup from '@material-ui/core/RadioGroup'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import FormControl from '@material-ui/core/FormControl'
+import Paper from '@material-ui/core/Paper'
+import Typography from '@material-ui/core/Typography'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
     root: {
       ...theme.mixins.gutters(),
       padding: theme.spacing.unit * 2
     },
-  });
+  })
 
 class DieselOrGas extends React.Component {
   state = {
     value: sessionStorage.getItem('dieselOrGas'),
-  };
+  }
 
   handleChange = event => {
-    this.setState({ value: event.target.value });
-    sessionStorage.setItem("dieselOrGas", event.target.value);   
-  };
+    this.setState({ value: event.target.value }, () => {
+      this.props.handlerToUpdate( this.state.value ); 
+    })
+    sessionStorage.setItem("dieselOrGas", event.target.value)
+    sessionStorage.removeItem("make")
+    sessionStorage.removeItem("year")
+    sessionStorage.removeItem("model")
+    sessionStorage.removeItem("floorplan") 
+  }
 
   render() {    
-    const { classes } = this.props;
-    var handleToUpdate  = this.props.handlerToUpdate;
+    const { classes } = this.props
+    var handleToUpdate  = this.props.handlerToUpdate
     return (
       <Paper className={classes.root} elevation={1}>
         <Typography variant="h5" component="h3">
@@ -58,10 +64,10 @@ class DieselOrGas extends React.Component {
             </RadioGroup>
         </FormControl>
       </Paper>
-    );
+    )
   }
 }
 DieselOrGas.propTypes = {
     classes: PropTypes.object.isRequired,
-};
-export default withStyles(styles)(DieselOrGas);
+}
+export default withStyles(styles)(DieselOrGas)

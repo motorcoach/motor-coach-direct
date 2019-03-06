@@ -4,29 +4,37 @@ import Home from './pages/home'
 import Card from './pages/card'
 import Other from './pages/other'
 import Start from './pages/start'
-import Header from './components/header'
-import { BrowserRouter as Router, Route } from "react-router-dom"
-import fleetwood_paceArrow from './img/fleetwood_pace-arrow.png'
-import fleetwood_discovery from './img/fleetwood_discovery.png'
-import logo from './img/white-logo.svg'
+import { HashRouter  as Router, Route } from "react-router-dom"
+import $ from 'jquery'
+import { MuiThemeProvider } from '@material-ui/core/styles';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    
-    
-  }
+
+import theme from './theme/bee-eater'
+
+class App extends Component {  
   
+componentDidMount () {
+  $(() => {
+    window.basket.require({url: 'lightningPoints/jsdoit.js'})
+      .then(function () {
+        window.basket.require({url: 'lightningPoints/index.js'});
+    })
+  })     
+}
   render() {
+    
     return (
-      <Router basename={process.env.PUBLIC_URL}>
-        <div className="App">                
+      <MuiThemeProvider theme={theme}>
+      <Router basename={process.env.PUBLIC_URL}>        
+        <div className="App">      
+          <canvas id='c' className="App-lightning" ></canvas>   
           <Route exact path="/" component={Home} />
           <Route path="/card" component={Card} />
           <Route path="/other" component={Other} />
-          <Route path="/start" component={Start} />          
+          <Route path='/start' component={Start} />                 
         </div>
       </Router>
+      </MuiThemeProvider>
     );
   }
 }

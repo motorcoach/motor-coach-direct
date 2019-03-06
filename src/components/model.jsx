@@ -20,10 +20,10 @@ class Model extends React.Component {
      
     state = {
       dieselOrGas: sessionStorage.getItem("dieselOrGas"),      
-      manufacturer: sessionStorage.getItem("manufacturer"),
+      make: sessionStorage.getItem("make"),
       model: sessionStorage.getItem("model"),
-      models: sessionStorage.getItem("dieselOrGas") && sessionStorage.getItem("manufacturer") && sessionStorage.getItem('year') ?      
-        Object.keys(MakesModels[sessionStorage.getItem("dieselOrGas")][sessionStorage.getItem("manufacturer")][sessionStorage.getItem('year')]).map((model, idx) => {
+      models: sessionStorage.getItem("dieselOrGas") && sessionStorage.getItem("make") && sessionStorage.getItem('year') ?      
+        Object.keys(MakesModels[sessionStorage.getItem("dieselOrGas")][sessionStorage.getItem("make")][sessionStorage.getItem('year')]).map((model, idx) => {
             return (
                 <FormControlLabel
                     key={idx}
@@ -38,16 +38,19 @@ class Model extends React.Component {
       year: sessionStorage.getItem('year')
     };
 
-    handleChangeYear = event => {        
+    handleChangeYear = event => {    
         if (this.state.dieselOrGas &&
-            this.state.manufacturer && 
+            this.state.make && 
             event.target.value) {
-            this.setState({ year: event.target.value });
-            sessionStorage.setItem("year", event.target.value)        
-            const handleToUpdate = this.props.handlerToUpdate;    
-        
+            this.setState({ year: event.target.value }, () => {
+                if (this.state.model) {
+                    this.props.handlerToUpdate( this.state.year,  this.state.model);             
+                }                
+                
+            } );
+            sessionStorage.setItem("year", event.target.value)    
             this.setState({ 
-                models:  Object.keys(MakesModels[this.state.dieselOrGas][this.state.manufacturer][event.target.value]).map((model, idx) => {
+                models:  Object.keys(MakesModels[this.state.dieselOrGas][this.state.make][event.target.value]).map((model, idx) => {
                     return (
                         <FormControlLabel
                             key={idx}
@@ -55,7 +58,7 @@ class Model extends React.Component {
                             control={<Radio color="primary" />}
                             label={model}
                             labelPlacement="start"
-                            onChange={() => handleToUpdate(this.handleChangeModel)}
+                            onChange={() => this.props.handlerToUpdate(this.handleChangeModel)}
                         />
                     )
                 })
@@ -64,18 +67,21 @@ class Model extends React.Component {
     }
 
     handleChangeModel = event => {        
-        this.setState({model: event.target.value}, function () {
-            this.props.handlerToUpdate( this.state.year + ' ' + this.state.model); 
-            
+        this.setState({model: event.target.value}, () => {
+            this.props.handlerToUpdate( this.state.year,  this.state.model);             
         });
         sessionStorage.setItem("model", event.target.value)
+        sessionStorage.removeItem("floorplan")
     }
 
     render() {
         const { classes } = this.props;         
-        const years = Object.keys(MakesModels[this.state.dieselOrGas][this.state.manufacturer]).map((year, idx) => {
+
+        const years = Object.keys(MakesModels[this.state.dieselOrGas][this.state.make]).reverse().map((year, idx) => {
             return (
+                //myArray.map((val, index) => myArray[myArray.length - 1 - index]);
                 <FormControlLabel
+                    key={idx}
                     value={year}
                     control={<Radio color="primary" />}
                     label={year}
