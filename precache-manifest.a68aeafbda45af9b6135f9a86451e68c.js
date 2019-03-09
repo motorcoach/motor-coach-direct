@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/motor-coach-direct/static/media/2018-Insignia-Exterior_Solar-Flare_2.a9f89342.png"
   },
   {
-    "revision": "3bc3fbe7a136edeae974",
-    "url": "/motor-coach-direct/static/css/main.e152bd49.chunk.css"
+    "revision": "950e4f58d01d05db5c52",
+    "url": "/motor-coach-direct/static/css/main.d675397b.chunk.css"
   },
   {
     "revision": "ec0bf92b9068c7962fd25c5184392ecb",
@@ -32,16 +32,16 @@ self.__precacheManifest = [
     "url": "/motor-coach-direct/static/media/slick.ced611da.eot"
   },
   {
+    "revision": "d41f55a78e6f49a5512878df1737e58a",
+    "url": "/motor-coach-direct/static/media/slick.d41f55a7.ttf"
+  },
+  {
     "revision": "b7c9e1e479de3b53f1e4e30ebac2403a",
     "url": "/motor-coach-direct/static/media/slick.b7c9e1e4.woff"
   },
   {
     "revision": "f97e3bbf73254b0112091d0192f17aec",
     "url": "/motor-coach-direct/static/media/slick.f97e3bbf.svg"
-  },
-  {
-    "revision": "d41f55a78e6f49a5512878df1737e58a",
-    "url": "/motor-coach-direct/static/media/slick.d41f55a7.ttf"
   },
   {
     "revision": "fce3ca21fd92ecb8fbe54f5e2436bf08",
@@ -432,8 +432,8 @@ self.__precacheManifest = [
     "url": "/motor-coach-direct/static/media/2018-Insignia-Exterior_Mahogany-Red_2.05e8d8de.png"
   },
   {
-    "revision": "3bc3fbe7a136edeae974",
-    "url": "/motor-coach-direct/static/js/main.3bc3fbe7.chunk.js"
+    "revision": "950e4f58d01d05db5c52",
+    "url": "/motor-coach-direct/static/js/main.950e4f58.chunk.js"
   },
   {
     "revision": "990d9b2b928ec4d220da36db8b0c6544",
@@ -860,7 +860,7 @@ self.__precacheManifest = [
     "url": "/motor-coach-direct/static/css/1.b4dbcbb7.chunk.css"
   },
   {
-    "revision": "abc6498e34743319f296adf7c52aa40e",
+    "revision": "89c1dcea7849bd1b5910a14173bfbdb6",
     "url": "/motor-coach-direct/index.html"
   }
 ];
