@@ -10,6 +10,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import liberty from '../img/motorcoach-direct/Liberty-Coach.jpg'
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import Stepper from '../components/stepper'
 
 import { withRouter } from "react-router";
 const styles = theme => ({
@@ -47,10 +49,33 @@ const styles = theme => ({
         fontWeight: 'bold',
         letterSpaceing: '1px',
         background: '#F0C370',
-        borderRadius: '2px'
-    }
+        borderRadius: '2px',
+        boxShadow: 'none',
+        '&:hover':{
+            background: '#9e7323'
+        }
+    },
+    
   });
 class Benefits extends React.Component {
+    state = {
+        top: false,
+        left: false,
+        bottom: false,
+        right: false,
+    }
+
+    toggleDrawer = (side, open) => () => {
+        
+        this.setState({
+            [side]: open
+        });
+    };
+
+    handleHeader = (headerImage) => {
+        this.setState({headerImage: headerImage})
+    }
+
     handleSubmit = event => {
         sessionStorage.clear();
         this.props.history.push('/start');
@@ -58,6 +83,7 @@ class Benefits extends React.Component {
     render() {
         const { classes } = this.props;
         return (
+            <div>
             <Card className={classes.card} >
                 <CardMedia
                     className='get-started-bg'
@@ -79,29 +105,13 @@ class Benefits extends React.Component {
                             Choose your Coach and options and
                             Create a detailed timeline for your purchase with one of our Motorhome specialists
                             </p>
-                            {/* <Typography component={'span'} variant="h5"  className={classes.listItemText} >
-                                 Benefits of using MotorCoach DIRECT
-                            </Typography>            
-                            <List >
-                                <ListItem><ListItemText className={classes.listItemText} primary="Get wholesale level pricing on the Coach of your choice not available to retail consumers">Get wholesale level pricing on the Coach of your choice not available to retail consumers</ListItemText> </ListItem>
-                                <ListItem><ListItemText className={classes.listItemText} primary="Never Step foot in a dealership"/></ListItem>
-                                <ListItem><ListItemText className={classes.listItemText} primary="Never haggle with a salesman"/></ListItem>
-                                <ListItem><ListItemText className={classes.listItemText} primary="Have every detail of your purchase attended to by one of our specialists"/></ListItem>               
-                            </List>
-                            <Typography component={'span'} variant="h5" className={classes.listItemText}>
-                                Our Process
-                            </Typography>      
-                            <List>
-                                <ListItem><ListItemText className={classes.listItemText} primary="Choose your Coach and options"/></ListItem>
-                                <ListItem><ListItemText className={classes.listItemText} primary="Create a detailed timeline for your purchase with one of our Motorhome specialists"/></ListItem>                                    
-                            </List> */}
                         </Grid>
                         <Grid item xs={12}>
                             <Button 
                                 variant="contained" 
                                 color="primary" 
                                 className={classes.button}
-                                onClick={this.handleSubmit}
+                                onClick={this.toggleDrawer('top', true)}
                             >
                                 Get Started
                             </Button> 
@@ -109,7 +119,23 @@ class Benefits extends React.Component {
                     </Grid>
                 </CardMedia>
                
-            </Card>        
+            </Card>
+            <SwipeableDrawer
+            open={this.state.top}
+            onClose={this.toggleDrawer('top', false)}
+            onOpen={this.toggleDrawer('top', true)}
+            anchor="top"
+            >
+            <div
+                tabIndex={0}
+                role="button"
+                
+            >
+            <Stepper handlerToUpdate = {this.handleHeader} />  
+            </div>
+            </SwipeableDrawer>     
+           </div>
+
         );
     }
 }

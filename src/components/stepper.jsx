@@ -11,25 +11,51 @@ import DieselOrGas from './dieselOrGas'
 import Makes from './makes'
 import Floorplan from './floorplan'
 import Model from './model'
-import logo from '../img/white-logo.svg'
 import yellow from '../img/yellow-logo.svg'
 import MakesMap from '../data/makesMap'
 import ModelsMap from '../data/modelsMap'
 import FloorplansMap from '../data/floorplansMap'
 import DieselGasMap from '../data/dieselGasMap'
+import Header from '../components/header'
+import logo from '../img/logo.png'
 
 const styles = theme => ({
-  root: {    
+  root: {  
+    minHeight: '800px'  
     
   },
-  button: {
-    marginRight: theme.spacing.unit,
+  nextButton: {
+    marginRight: theme.spacing.unit, 
+    width: '150px',
+    height: '40px',
+    fontWeight: 'bold',
+    letterSpaceing: '1px',
+    background: '#F0C370',
+    borderRadius: '2px',
+    boxShadow: 'none',
+    '&:hover':{
+        background: '#9e7323'
+    
+      }
   },
+
+  backButton: {
+    padding: '50px',
+    '&:hover':{
+      background: 'none'
+    }
+  },
+
+  buttonContainer:{
+    textAlign:'center'
+  },
+
   instructions: {
     marginTop: theme.spacing.unit,
     marginBottom: theme.spacing.unit,
   },  
 });
+
 
 class HorizontalLinearStepper extends React.Component {
   state = {
@@ -264,8 +290,10 @@ class HorizontalLinearStepper extends React.Component {
     const steps = this.getSteps();
     const { activeStep } = this.state;   
     return (
-      <div className={classes.root}>            
+      <div className={classes.root}>    
+      <Header headerImage={logo} />        
         {/* <Header headerImage={this.state.headerImage} ></Header> */}
+
         <Stepper activeStep={activeStep} >
           {steps.map((label, index) => {
             const props = {};
@@ -277,12 +305,13 @@ class HorizontalLinearStepper extends React.Component {
               props.completed = false;
             }            
             return (
-              <Step key={label} {...props}>
+              <Step className={classes.step} key={label} {...props}>
                 <StepLabel {...labelProps}>{label}</StepLabel>                
               </Step>
             );
           })}
         </Stepper>
+
         <div>
           {activeStep === steps.length ? (
             <div>
@@ -296,10 +325,11 @@ class HorizontalLinearStepper extends React.Component {
           ) : (
             <div>
               <Typography component={'span'}  className={classes.instructions}>{this.getStepContent(activeStep)}</Typography>
-              <div>              
+              <div className={classes.buttonContainer}>         
                   <Button
                     onClick={this.handleBack}
-                    className={classes.button}
+                    className={classes.backButton}
+                    disabled= {this.state.activeStep < 1}
                   >
                   Back
                 </Button>               
@@ -308,16 +338,14 @@ class HorizontalLinearStepper extends React.Component {
                     variant="contained"
                     color="primary"
                     onClick={this.handleSkip}
-                    className={classes.button}
+                    className={classes.skipButton}
                   >
                     Skip
                   </Button>
                 )}
                 <Button
-                  variant="contained"
-                  color="primary"
                   onClick={activeStep === steps.length - 1 ? this.handleCard : this.handleNext}
-                  className={classes.button}
+                  className={classes.nextButton}
                   disabled={this.state.nextStepDisabled}
                 >
                   Next

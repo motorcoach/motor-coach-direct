@@ -14,7 +14,11 @@ import MakesModels from '../data/makesModels.json';
 const styles = theme => ({
     root: {
       ...theme.mixins.gutters(),
-      padding: theme.spacing.unit * 2
+      padding: theme.spacing.unit * 2,
+      textAlign: 'center',
+      fontFamily: 'lato',
+      fontSize: '1.5em',
+      fontWeight: 'bold',
     }
     
   })

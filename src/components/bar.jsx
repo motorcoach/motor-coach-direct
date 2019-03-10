@@ -109,8 +109,7 @@ class Bar extends Component {
     toggleDrawer = (side, open) => () => {
 
         this.setState({
-            [side]: open,
-            
+            [side]: open
         });
     };
     
@@ -138,7 +137,7 @@ class Bar extends Component {
             <div className={classes.root}>
             <AppBar  position="absolute"  style={{ background: 'transparent', boxShadow: 'none'}}>
                 <Toolbar>
-                <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer" onClick={this.toggleDrawer('left', true)}>
+                <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer" onClick={this.toggleDrawer('top', true)}>
                     <Avatar alt="Motorcoach Direct" src={emblem}  />                
                 </IconButton>          
                 <div className={classes.grow} />
@@ -158,15 +157,16 @@ class Bar extends Component {
             </AppBar>
 
             <SwipeableDrawer
-                open={this.state.left}
-                onClose={this.toggleDrawer('left', false)}
-                onOpen={this.toggleDrawer('left', true)}
+                open={this.state.top}
+                onClose={this.toggleDrawer('top', false)}
+                onOpen={this.toggleDrawer('top', true)}
+                anchor="top"
                 >
                 <div
                     tabIndex={0}
                     role="button"
-                    onClick={this.toggleDrawer('left', false)}
-                    onKeyDown={this.toggleDrawer('left', false)}
+                    onClick={this.toggleDrawer('top', false)}
+                    onKeyDown={this.toggleDrawer('top', false)}
                 >
                     {sideList}
                 </div>
