@@ -27,7 +27,16 @@ import { withRouter } from "react-router";
 
 const styles = theme => ({
     button: {
-      marginRight: theme.spacing.unit,      
+      width: '200px',
+      height: '46px',
+      fontWeight: 'bold',
+      letterSpaceing: '1px',
+      background: '#F0C370',
+      borderRadius: '2px',
+      boxShadow: 'none',
+      '&:hover':{
+          background: '#9e7323'
+      }     
     },
     form: {
       display: 'flex',
@@ -243,8 +252,9 @@ const styles = theme => ({
           <Button 
             variant="contained" 
             color="primary" 
+            className={classes.button}
             onClick={this.handleClickOpen}>
-            Next
+            Get Started
           </Button>
           <Dialog
             fullWidth={this.state.fullWidth}

@@ -11,7 +11,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import liberty from '../img/motorcoach-direct/Liberty-Coach.jpg'
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Stepper from '../components/stepper'
+import Stepper from '../components/stepper';
+import Financials from '../components/financials';
 
 import { withRouter } from "react-router";
 const styles = theme => ({
@@ -107,14 +108,15 @@ class Benefits extends React.Component {
                             </p>
                         </Grid>
                         <Grid item xs={12}>
-                            <Button 
+                            <Financials/>
+                            {/* <Button 
                                 variant="contained" 
                                 color="primary" 
                                 className={classes.button}
                                 onClick={this.toggleDrawer('top', true)}
                             >
                                 Get Started
-                            </Button> 
+                            </Button>  */}
                         </Grid>       
                     </Grid>
                 </CardMedia>
