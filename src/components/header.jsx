@@ -10,8 +10,8 @@ class Header extends Component {
         return (            
             <div>                
                 <header className="App-header">   
-                    <img src={headerImage} className="App-headerImage" alt="" />                                                                                                                                           
-                    <img src={logo} className="App-logo-hide" alt="motorcoach-direct" />
+                    <img src={headerImage} className="App-headerImage" alt="" />    
+                                                                                                                                                        
                 </header>
             </div>
         );

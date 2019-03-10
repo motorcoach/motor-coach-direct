@@ -13,23 +13,42 @@ import liberty from '../img/motorcoach-direct/Liberty-Coach.jpg'
 
 import { withRouter } from "react-router";
 const styles = theme => ({
-    root: {
-        ...theme.mixins.gutters(),
-        padding: theme.spacing.unit * 2,      
-    },
-    card: {
-        paddingTop:theme.spacing.unit,
-        
-    },
+   
     listItemText: {
-        paddingTop:theme.spacing.unit * 13,
-        fontFamily:'Segoe UI Black',
-        fontSize:'3rem',
-        fontStyle:'italic',
-        color:'#011',
-        textAlign: "center",
-        textShadow: '2px 2px yellow'
+        fontFamily:'Playfair Display',
+        fontSize:'4.75rem',
+        color:'#213669',
+        textAlign: "left",
+        textTransform: 'uppercase',
+        maxWidth: '800px',
+        lineHeight: '75px',
+        paddingBottom: '20px'
     },
+    blurb:{
+        textAlign: 'left',
+        fontFamily: 'lato',
+        fontSize: '1.25rem',
+        maxWidth: '650px',
+        lineHeight: '32px'
+    },
+    getStartedCard:{
+        position: 'absolute',
+        backgroundColor: '#ffffffed', 
+        maxWidth: '35%',
+        top: '250px',
+        left: '200px',
+        padding: '30px',
+        textAlign: 'left',
+        minHeight: '57vh'
+      },
+    button:{
+        width: '200px',
+        height: '46px',
+        fontWeight: 'bold',
+        letterSpaceing: '1px',
+        background: '#F0C370',
+        borderRadius: '2px'
+    }
   });
 class Benefits extends React.Component {
     handleSubmit = event => {
@@ -41,16 +60,25 @@ class Benefits extends React.Component {
         return (
             <Card className={classes.card} >
                 <CardMedia
-                    className={classes.media}
+                    className='get-started-bg'
                     image={liberty}
-                    style={{height: '23em'}}
+                    style={{height: '85vh'}}
                 >
-                    <Grid container spacing={24} justify="center">
+                       <Grid container spacing={24} justify="center" className={classes.getStartedCard}>
                         <Grid item xs={12}>            
                             <Typography component={'span'} className={classes.listItemText} >
                                 A Buyer's Service for your next adventure
                             </Typography>
-                            
+                            <p className={classes.blurb}>
+                            Get wholesale level pricing on the Coach of your choice not available to retail consumers
+                            Never Step foot in a dealership
+                            Never haggle with a salesman
+                            Have every detail of your purchase attended to by one of our specialists
+                            </p>
+                            <p className={classes.blurb}>
+                            Choose your Coach and options and
+                            Create a detailed timeline for your purchase with one of our Motorhome specialists
+                            </p>
                             {/* <Typography component={'span'} variant="h5"  className={classes.listItemText} >
                                  Benefits of using MotorCoach DIRECT
                             </Typography>            
@@ -78,8 +106,9 @@ class Benefits extends React.Component {
                                 Get Started
                             </Button> 
                         </Grid>       
-                    </Grid>  
+                    </Grid>
                 </CardMedia>
+               
             </Card>        
         );
     }

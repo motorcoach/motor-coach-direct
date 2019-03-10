@@ -21,7 +21,6 @@ class Card extends Component {
   render() {
     return (
       <div>
-        <Bar />
         <Header headerImage={this.state.headerImage}/>
         <Options handlerToUpdate = {this.handleHeader} />
       </div>

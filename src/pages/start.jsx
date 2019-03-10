@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Stepper from '../components/stepper'
 import Header from '../components/header'
 import Logo from '../img/white-logo.svg'
-import Bar from '../components/bar'
 
 class Start extends Component { 
   state = {
@@ -16,7 +15,6 @@ class Start extends Component {
   render() {
     return (
       <div> 
-        <Bar/>
         <Header headerImage={this.state.headerImage}  />       
         <Stepper handlerToUpdate = {this.handleHeader} />           
       </div>

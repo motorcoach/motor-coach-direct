@@ -3,15 +3,12 @@
 }
 
 .App-headerImage {
-  /* animation: App-logo-spin infinite 20s linear;  */
-  height: 40vmin;
-  margin: auto;
-  position: absolute;
-  /* display: flex; 
-  align-items: center;
-  justify-content: center; 
-  text-align: center;   */
-  z-index:3;
+    /* animation: App-logo-spin infinite 20s linear; */
+    margin: auto;
+    /* position: absolute; */
+    z-index: 3;
+    height: 65px;
+    padding: 10px;
 }
 
 .App-lightning {  
@@ -46,9 +43,8 @@
   font-size: calc(10px + 2vmin);
 }
 .App-header {
-  background-color: #000f14;
-  height: 40vh;
-  display: flex;
+  max-height: 229px;
+  display: block;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -68,6 +64,50 @@
     transform: rotate(360deg);
   }
 }
+
+.footer-container{
+  margin:20px;
+  display: block;
+  text-align: center;
+}
+
+.footer-phone{
+  color: black;
+  border-right: solid black 1px;
+  padding:0 20px 0 20px;
+}
+
+.footer-address{
+  border-right: solid black 1px;
+  padding:0 20px 0 20px;
+}
+
+.footer-copyright{
+  padding-left: 20px;
+}
+
+.get-started-card{
+  background-color: white !important;
+  
+  max-width: 35%;
+  margin-left: 200px !important;
+  display: block;
+
+}
+
+.list-item-text{
+  color: #213669;
+  font-size: 3.75rem;
+  text-align: left;
+  /* padding-top: 104px; */
+  font-family: Playfair Display;
+  font-weight: 900;
+  padding: 50px;
+  text-transform: uppercase;
+  max-width: 625px;
+  line-height: 75px;
+}
+
 
 canvas {
   position: absolute;
