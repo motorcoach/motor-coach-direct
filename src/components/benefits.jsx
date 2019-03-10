@@ -97,10 +97,10 @@ class Benefits extends React.Component {
                                 A Buyer's Service for your next adventure
                             </Typography>
                             <p className={classes.blurb}>
-                            Get wholesale level pricing on the Coach of your choice not available to retail consumers
-                            Never Step foot in a dealership
-                            Never haggle with a salesman
-                            Have every detail of your purchase attended to by one of our specialists
+                            Get wholesale level pricing on the Coach of your choice not available to retail consumers.
+                            Never Step foot in a dealership.
+                            Never haggle with a salesman.
+                            Have every detail of your purchase attended to by one of our specialists.
                             </p>
                             <p className={classes.blurb}>
                             Choose your Coach and options and
