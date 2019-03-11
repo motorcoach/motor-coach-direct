@@ -14,12 +14,12 @@ import theme from './theme/bee-eater'
 class App extends Component {  
   
 componentDidMount () {
-  $(() => {
-    window.basket.require({url: 'lightningPoints/jsdoit.js'})
-      .then(function () {
-        window.basket.require({url: 'lightningPoints/index.js'});
-    })
-  })     
+  // $(() => {
+  //   window.basket.require({url: 'lightningPoints/jsdoit.js'})
+  //     .then(function () {
+  //       window.basket.require({url: 'lightningPoints/index.js'});
+  //   })
+  // })     
 }
   render() {
     

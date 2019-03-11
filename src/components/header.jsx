@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import logo from '../img/white-logo.svg'
-
-import liberty from '../img/motorcoach-direct/Liberty-Coach.jpg'
 
 class Header extends Component {         
     render() {    
-        let {headerImage, scene} = this.props;   
+        let {headerImage, logo} = this.props;   
           
         return (            
             <div>                

@@ -125,6 +125,7 @@ class Bar extends Component {
         <Typography component="p">
         10214 Hickory Flat Hwy, Suite 200<br />
         Woodstock, GA 30188
+        470-878-9284
           <br />
          
         </Typography>

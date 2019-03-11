@@ -17,7 +17,7 @@ class Start extends Component {
     return (
       <div> 
         <Bar/>
-        <Header headerImage={this.state.headerImage}  />       
+        <Header headerImage={this.state.headerImage} logo={Logo} />       
         <Stepper handlerToUpdate = {this.handleHeader} />           
       </div>
     );

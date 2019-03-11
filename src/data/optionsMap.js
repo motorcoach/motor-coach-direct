@@ -44,17 +44,29 @@ const OptionsMap = {
         }]
     },
     'Entegra':{
-        2020:[{ 
+        2020:[{            
+            'name': 'Exterior Graphics',        
+            'size': 5,    
+            'source': 'Paints'
+        }, { 
             'name': 'Floorplans',
             'size': 7,
             'source': 'Floorplans'
         }],
-        2019:[{ 
+        2019:[{            
+            'name': 'Exterior Graphics',        
+            'size': 5,    
+            'source': 'Paints'
+        }, { 
             'name': 'Floorplans',
             'size': 7,
             'source': 'Floorplans'
         }],
-        2018:[{ 
+        2018:[{            
+            'name': 'Exterior Graphics',        
+            'size': 5,    
+            'source': 'Paints'
+        }, { 
             'name': 'Floorplans',
             'size': 7,
             'source': 'Floorplans'

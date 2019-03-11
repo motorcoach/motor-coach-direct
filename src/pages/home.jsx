@@ -11,7 +11,7 @@ class Home extends Component {
     return (
       <div >
         <Bar/>
-        <Header headerImage={logo} />
+        <Header headerImage={logo} logo={logo} />
         <Benefits />
       </div>
     );

@@ -420,8 +420,8 @@ const styles = theme => ({
                           value="w21099"
                           />
                         }
-                        label={purchasePlan ? 'Yes' : 'No'}
-                        labelPlacement={purchasePlan ? 'start' : 'end'}
+                        label={w21099 ? 'Yes' : 'No'}
+                        labelPlacement={w21099 ? 'start' : 'end'}
                         />                      
                     </Grid>
                     <FormLabel className={classes.disclaimer} component="legend">

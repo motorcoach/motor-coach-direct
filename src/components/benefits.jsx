@@ -18,18 +18,20 @@ const styles = theme => ({
         padding: theme.spacing.unit * 2,      
     },
     card: {
-        paddingTop:theme.spacing.unit,
         
     },
     listItemText: {
-        paddingTop:theme.spacing.unit * 13,
-        fontFamily:'Segoe UI Black',
+        paddingTop:'10vh',
+        fontFamily:'Chronicle, Segoe UI Black',
         fontSize:'3rem',
         fontStyle:'italic',
         color:'#011',
         textAlign: "center",
         textShadow: '2px 2px yellow'
     },
+    grid: {
+        backgroundColor:'#000f14'
+    }
   });
 class Benefits extends React.Component {
     handleSubmit = event => {
@@ -40,17 +42,27 @@ class Benefits extends React.Component {
         const { classes } = this.props;
         return (
             <Card className={classes.card} >
-                <CardMedia
-                    className={classes.media}
-                    image={liberty}
-                    style={{height: '23em'}}
-                >
+                
                     <Grid container spacing={24} justify="center">
-                        <Grid item xs={12}>            
+                        <Grid item xs={6} className={classes.grid}>    
+                            <CardMedia
+                                className={classes.media}
+                                image={liberty}
+                                style={{height: '40vh'}}
+                            ></CardMedia>        
+                        </Grid>
+                        <Grid item xs={6} className={classes.grid}>            
                             <Typography component={'span'} className={classes.listItemText} >
                                 A Buyer's Service for your next adventure
                             </Typography>
-                            
+                            <Button 
+                                variant="contained" 
+                                color="primary" 
+                                className={classes.button}
+                                onClick={this.handleSubmit}
+                            >
+                                Get Started
+                            </Button> 
                             {/* <Typography component={'span'} variant="h5"  className={classes.listItemText} >
                                  Benefits of using MotorCoach DIRECT
                             </Typography>            
@@ -68,18 +80,8 @@ class Benefits extends React.Component {
                                 <ListItem><ListItemText className={classes.listItemText} primary="Create a detailed timeline for your purchase with one of our Motorhome specialists"/></ListItem>                                    
                             </List> */}
                         </Grid>
-                        <Grid item xs={12}>
-                            <Button 
-                                variant="contained" 
-                                color="primary" 
-                                className={classes.button}
-                                onClick={this.handleSubmit}
-                            >
-                                Get Started
-                            </Button> 
-                        </Grid>       
+                               
                     </Grid>  
-                </CardMedia>
             </Card>        
         );
     }
