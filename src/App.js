@@ -24,17 +24,17 @@ componentDidMount () {
   render() {
     
     return (
-      <MuiThemeProvider theme={theme}>
+      // <MuiThemeProvider >
       <Router basename={process.env.PUBLIC_URL}>        
         <div className="App">      
-          <canvas id='c' className="App-lightning" ></canvas>   
+          {/* <canvas id='c' className="App-lightning" ></canvas>    */}
           <Route exact path="/" component={Home} />
           <Route path="/card" component={Card} />
           <Route path="/other" component={Other} />
           <Route path='/start' component={Start} />                 
         </div>
       </Router>
-      </MuiThemeProvider>
+      // </MuiThemeProvider>
     );
   }
 }

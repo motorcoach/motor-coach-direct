@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
 import Benefits from '../components/benefits'
 import Header from '../components/header'
-import logo from '../img/white-logo.svg'
 import Bar from '../components/bar'
 import liberty from '../img/motorcoach-direct/Liberty-Coach.jpg'
-
+import Footer from '../components/footer'
+import logo from '../img/logo.png'
 class Home extends Component {  
 
   render() {
     return (
       <div >
-        <Bar/>
+        {/* <Bar/> */}
         <Header headerImage={logo} logo={logo} />
         <Benefits />
+        <Footer />
       </div>
     );
   }
