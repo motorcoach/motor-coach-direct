@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/motor-coach-direct/static/media/2018 Tiffin Allegro Bus.7deca9f1.png"
   },
   {
-    "revision": "dad3f5df8e0828c46df5",
+    "revision": "3ed6cd07c9f3d4f53f40",
     "url": "/motor-coach-direct/static/css/main.1e789e52.chunk.css"
   },
   {
@@ -36,16 +36,16 @@ self.__precacheManifest = [
     "url": "/motor-coach-direct/static/media/diesel.7af65220.png"
   },
   {
-    "revision": "ced611daf7709cc778da928fec876475",
-    "url": "/motor-coach-direct/static/media/slick.ced611da.eot"
-  },
-  {
     "revision": "d41f55a78e6f49a5512878df1737e58a",
     "url": "/motor-coach-direct/static/media/slick.d41f55a7.ttf"
   },
   {
     "revision": "b7c9e1e479de3b53f1e4e30ebac2403a",
     "url": "/motor-coach-direct/static/media/slick.b7c9e1e4.woff"
+  },
+  {
+    "revision": "ced611daf7709cc778da928fec876475",
+    "url": "/motor-coach-direct/static/media/slick.ced611da.eot"
   },
   {
     "revision": "f97e3bbf73254b0112091d0192f17aec",
@@ -348,8 +348,8 @@ self.__precacheManifest = [
     "url": "/motor-coach-direct/static/media/2019 Tiffin Zephyr.757d70af.png"
   },
   {
-    "revision": "dad3f5df8e0828c46df5",
-    "url": "/motor-coach-direct/static/js/main.dad3f5df.chunk.js"
+    "revision": "3ed6cd07c9f3d4f53f40",
+    "url": "/motor-coach-direct/static/js/main.3ed6cd07.chunk.js"
   },
   {
     "revision": "295deeecde0c41bf079da900c1c6b0d0",
@@ -696,7 +696,7 @@ self.__precacheManifest = [
     "url": "/motor-coach-direct/static/css/1.ff0b1306.chunk.css"
   },
   {
-    "revision": "6964431916722afb770bcfb8566a6cf2",
+    "revision": "a8868cd4ce42a751eef731e0fbdf2837",
     "url": "/motor-coach-direct/index.html"
   }
 ];
