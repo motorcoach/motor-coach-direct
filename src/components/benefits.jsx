@@ -112,7 +112,7 @@ const styles = theme => ({
    
     listItemText: {
         fontFamily:'Playfair Display',
-        fontSize:'4.75rem',
+        fontSize:'4.75vw',
         color:'#213669',
         textAlign: "left",
         textTransform: 'uppercase',
@@ -159,12 +159,12 @@ class Benefits extends React.Component {
         right: false,
     }
 
-    toggleDrawer = (side, open) => () => {
+    // toggleDrawer = (side, open) => () => {
         
-        this.setState({
-            [side]: open
-        });
-    };
+    //     this.setState({
+    //         [side]: open
+    //     });
+    // };
 
     handleHeader = (headerImage) => {
         this.setState({headerImage: headerImage})
@@ -194,6 +194,8 @@ class Benefits extends React.Component {
                             Never Step foot in a dealership.
                             Never haggle with a salesman.
                             Have every detail of your purchase attended to by one of our specialists.
+                            Get wholesale level pricing on the Coach of your choice.                            
+                            Never deal with a salesman. Have a stress free purchasing experience with the confidence that you will get the best pricing.
                             </p>
                             <p className={classes.blurb}>
                             Choose your Coach and options and
@@ -201,15 +203,15 @@ class Benefits extends React.Component {
                             </p>
                         </Grid>
                         <Grid item xs={12}>
-                            {/* <Financials/> */}
-                            <Button 
+                            <Financials/>
+                            {/* <Button 
                                 variant="contained" 
                                 color="primary" 
                                 className={classes.button}
                                 onClick={this.handleSubmit}
                             >
                                 Get Started
-                            </Button> 
+                            </Button>  */}
                         </Grid>       
                     </Grid>
                 </CardMedia>
@@ -217,8 +219,8 @@ class Benefits extends React.Component {
             </Card>
             <SwipeableDrawer
             open={this.state.top}
-            onClose={this.toggleDrawer('top', false)}
-            onOpen={this.toggleDrawer('top', true)}
+            // onClose={this.toggleDrawer('top', false)}
+            // onOpen={this.toggleDrawer('top', true)}
             anchor="top"
             >
             <div

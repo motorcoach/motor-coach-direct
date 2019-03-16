@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import OtherComponent from '../components/other';
-import Header from '../components/header'
-import Bar from '../components/bar'
+import Header from '../components/header';
+import logo from '../img/logo.png';
+import Footer from '../components/footer';
 
 class Other extends Component {
     render() {
         return (
-            <div>                
-                <Bar />
-                <Header />
+            <div>         
+                <Header headerImage={logo} />
                 <OtherComponent />  
+                <Footer />
             </div>
         )
     }

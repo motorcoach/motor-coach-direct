@@ -5,7 +5,6 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -255,14 +254,8 @@ const styles = theme => ({
             disableBackdropClick
             disableEscapeKeyDown
           >
-            <DialogTitle id="max-width-dialog-title">Financial Questionaire</DialogTitle>
-            <DialogContent>
-            <DialogContentText>
-                Please supply information so we may know more about your request
-              </DialogContentText>
-              <FormLabel className={classes.disclaimer} component="legend">
-                HELP US BEST SERVE YOU IN GETTING YOU AS CLOSE TO WHOLESALE PRICING AS POSSIBLE. YOUR ANSWERS TO THE QUESTIONS BELOW GIVE US A BASELINE IDEA OF WHERE YOU WANT TO BE AND HOW WE CAN BEST SERVE YOU
-              </FormLabel>
+            <DialogTitle id="max-width-dialog-title">Pre-qualification assessment</DialogTitle>
+            <DialogContent>            
               <form className={classes.form} noValidate>
                 <FormControl className={classes.formControl}>
                   <Grid container spacing={24}>
@@ -425,10 +418,9 @@ const styles = theme => ({
                         />                      
                     </Grid>
                     <FormLabel className={classes.disclaimer} component="legend">
-                    DISCLAIMER:  ALL SELECTIONS WITHIN THIS QUESTIONNAIRE ARE CONFIDENTIAL AND NOT SHARED WITH ANY THIRD PARTY.  NO ANSWERS ARE USED TO QUALIFY OR DISQUALIFY YOU FROM ANY LOAN OR LIMIT YOUR ACCESS TO RV SPECIFIC LENDERS OR USED IN THE UNDERWRITING PROCESS IN ANY WAY.  WE BELIEVE IN PERSONAL PRIVACY SO IN ADDITION TO YOUR SELECTIONS BELOW WE WILL NEVER SHARE YOUR EMAIL, PHONE NUMBER, OR LOCATION DATA WITH ANY THIRD PARTY FOR ANY REASON.
+                    DISCLAIMER:  ALL SELECTIONS WITHIN THIS ASSESSMENT ARE CONFIDENTIAL AND NOT SHARED WITH ANY THIRD PARTY . WE BELIEVE IN PERSONAL PRIVACY SO WE WILL NEVER SHARE YOUR EMAIL, PHONE NUMBER, OR LOCATION DATA FOR ANY REASON.
                     </FormLabel>
-                  </Grid>
-                                    
+                  </Grid>                                    
                 </FormControl>                
               </form>
             </DialogContent>
