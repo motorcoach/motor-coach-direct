@@ -53,14 +53,12 @@ PhoneMask.propTypes = {
 
 class Other extends Component {
     state = {
-        email: '',
         make: '',
         year: '',
         model: '',
-        name: '',
+        
         nextMonthPurchase: false,
         other: '',
-        phone: '(   )    -    '
     
     }
 
@@ -84,9 +82,6 @@ class Other extends Component {
             <Paper className={classes.root} elevation={1}>
                 <Typography component={'span'} variant="h6" >
                 We source all manufacturers and models. Let us know what you're looking for and we can help you locate it.  <br/>
-{/* Please fill out the information below and 
-one of our specialists will be in contact with you immediately.  We look forward to helping you find 
-your new Coach! */}
                 </Typography>
                 <FormControl component="fieldset">
                 <Grid container spacing={24}>
@@ -129,39 +124,7 @@ your new Coach! */}
                             onChange={this.handleChange('other')}
                             margin="normal"
                         />
-                    </Grid>
-                    <Grid item xs={6}>
-                        <TextField
-                            id="name"
-                            label="Name"
-                            className={classes.textField}
-                            value={name}
-                            onChange={this.handleChange('name')}
-                            margin="normal"
-                        />
-                    </Grid>
-                    <Grid item xs={6}>
-                        <TextField
-                            id="email"
-                            label="Email"
-                            className={classes.textField}
-                            value={email}
-                            onChange={this.handleChange('email')}
-                            margin="normal"
-                        />
-                    </Grid>
-                    <Grid item xs={6}>
-                    <FormControl className={classes.formControl}>
-                        <InputLabel htmlFor="phone">Phone</InputLabel>
-                        <Input
-                          value={phone}
-                          onChange={this.handleChange('phone')}
-                          id="phone"
-                          inputComponent={PhoneMask}
-                          margin="normal"
-                        />      
-                    </FormControl>
-                    </Grid>
+                    </Grid>                                        
                     <Grid item xs={6}>
                         <FormLabel component="legend">If we find your Coach are you looking to purchase in the next month?</FormLabel>
                         <FormControlLabel 
@@ -193,7 +156,7 @@ your new Coach! */}
                         >
                         Back
                         </Button>             
-                        <Financials />
+                        <Financials make={this.state.make} year={this.state.year} model={this.state.model} other={this.state.other} nextMonthPurchase={this.state.nextMonthPurchase} />
                     </Grid>
                 </Grid>
                 </FormControl>

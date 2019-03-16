@@ -218,19 +218,25 @@ const styles = theme => ({
     };
 
     handleOk = () => {
+      const {make, year, model, other, nextMonthPurchase} = this.props;
       this.setState({ open: false });
       request.post({
         url: 'https://us-central1-winter-agency-229213.cloudfunctions.net/sendgridEmail',
         form: {
           name: this.state.name,
-          dieselOrGas: sessionStorage.getItem("dieselOrGas"),
           email: this.state.email,
-          floorplan: sessionStorage.getItem("floorplan"),
-          make: sessionStorage.getItem("make"),
-          model: sessionStorage.getItem("model"),
-          newOrPreowned: sessionStorage.getItem("newOrPreowned"),
-          reason: sessionStorage.getItem("reason"),
-          year: sessionStorage.getItem('year')  
+          phone: this.state.phone,
+          make: make,
+          model: model,
+          year: year,
+          other: other,  
+          nextMonthPurchase: nextMonthPurchase,
+          preferredContactMethod: this.state.preferredContactMethod,
+          purchasePlan: this.state.purchasePlan,
+          desiredDownPayment: this.state.desiredDownPayment,
+          creditScore: this.state.creditScore,
+          annualIncome: this.state.annualIncome,
+          w21099: this.state.w21099
         }
       }, (err, response, body) => {
         sessionStorage.clear();
