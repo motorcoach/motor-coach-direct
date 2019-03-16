@@ -254,7 +254,7 @@ const styles = theme => ({
             color="primary" 
             className={classes.button}
             onClick={this.handleClickOpen}>
-            Get Started
+            Next
           </Button>
           <Dialog
             fullWidth={this.state.fullWidth}
@@ -265,14 +265,14 @@ const styles = theme => ({
             disableBackdropClick
             disableEscapeKeyDown
           >
-            <DialogTitle id="max-width-dialog-title">Financial Questionaire</DialogTitle>
+            <DialogTitle id="max-width-dialog-title">Pre-qualification assessment</DialogTitle>
             <DialogContent>
-            <DialogContentText>
+            {/* <DialogContentText>
                 Please supply information so we may know more about your request
               </DialogContentText>
               <FormLabel className={classes.disclaimer} component="legend">
                 HELP US BEST SERVE YOU IN GETTING YOU AS CLOSE TO WHOLESALE PRICING AS POSSIBLE. YOUR ANSWERS TO THE QUESTIONS BELOW GIVE US A BASELINE IDEA OF WHERE YOU WANT TO BE AND HOW WE CAN BEST SERVE YOU
-              </FormLabel>
+              </FormLabel> */}
               <form className={classes.form} noValidate>
                 <FormControl className={classes.formControl}>
                   <Grid container spacing={24}>
@@ -435,7 +435,7 @@ const styles = theme => ({
                         />                      
                     </Grid>
                     <FormLabel className={classes.disclaimer} component="legend">
-                    DISCLAIMER:  ALL SELECTIONS WITHIN THIS QUESTIONNAIRE ARE CONFIDENTIAL AND NOT SHARED WITH ANY THIRD PARTY.  NO ANSWERS ARE USED TO QUALIFY OR DISQUALIFY YOU FROM ANY LOAN OR LIMIT YOUR ACCESS TO RV SPECIFIC LENDERS OR USED IN THE UNDERWRITING PROCESS IN ANY WAY.  WE BELIEVE IN PERSONAL PRIVACY SO IN ADDITION TO YOUR SELECTIONS BELOW WE WILL NEVER SHARE YOUR EMAIL, PHONE NUMBER, OR LOCATION DATA WITH ANY THIRD PARTY FOR ANY REASON.
+                    DISCLAIMER:  ALL SELECTIONS WITHIN THIS ASSESSMENT ARE CONFIDENTIAL AND NOT SHARED WITH ANY THIRD PARTY . WE BELIEVE IN PERSONAL PRIVACY SO WE WILL NEVER SHARE YOUR EMAIL, PHONE NUMBER, OR LOCATION DATA FOR ANY REASON.
                     </FormLabel>
                   </Grid>
                                     

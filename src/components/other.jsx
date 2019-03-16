@@ -16,6 +16,7 @@ import MaskedInput from 'react-text-mask';
 import { withRouter } from "react-router";
 import Financials from './financials';
 
+
 const styles = theme => ({
     root: {
       ...theme.mixins.gutters(),
@@ -64,7 +65,7 @@ class Other extends Component {
     }
 
     handleBack = () => {
-      this.props.history.push('/start');
+      this.props.history.push('/');
     }
 
     handleChangeSwitch = name => event => {
@@ -82,11 +83,10 @@ class Other extends Component {
         return (
             <Paper className={classes.root} elevation={1}>
                 <Typography component={'span'} variant="h6" >
-                We source all manufacturers and models for our customers so just because what you're looking for 
-is not listed doesn't mean we can't help you locate it.  <br/>
-Please fill out the information below and 
+                We source all manufacturers and models. Let us know what you're looking for and we can help you locate it.  <br/>
+{/* Please fill out the information below and 
 one of our specialists will be in contact with you immediately.  We look forward to helping you find 
-your new Coach!
+your new Coach! */}
                 </Typography>
                 <FormControl component="fieldset">
                 <Grid container spacing={24}>

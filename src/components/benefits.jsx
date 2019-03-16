@@ -68,9 +68,10 @@ class Benefits extends React.Component {
 
     toggleDrawer = (side, open) => () => {
         
-        this.setState({
-            [side]: open
-        });
+        this.props.history.push('/other');
+        // this.setState({
+        //     [side]: open
+        // });
     };
 
     handleHeader = (headerImage) => {
@@ -97,26 +98,21 @@ class Benefits extends React.Component {
                                 A Buyer's Service for your next adventure
                             </Typography>
                             <p className={classes.blurb}>
-                            Get wholesale level pricing on the Coach of your choice not available to retail consumers.
-                            Never Step foot in a dealership.
-                            Never haggle with a salesman.
+                            Get wholesale level pricing on the Coach of your choice.                            
+                            Never deal with a salesman. Have a stress free purchasing experience with the confidence that you will get the best pricing.
                             Have every detail of your purchase attended to by one of our specialists.
-                            </p>
-                            <p className={classes.blurb}>
-                            Choose your Coach and options and
-                            Create a detailed timeline for your purchase with one of our Motorhome specialists
-                            </p>
+                            </p>                           
                         </Grid>
                         <Grid item xs={12}>
-                            <Financials/>
-                            {/* <Button 
+                          
+                            { <Button 
                                 variant="contained" 
                                 color="primary" 
                                 className={classes.button}
                                 onClick={this.toggleDrawer('top', true)}
                             >
                                 Get Started
-                            </Button>  */}
+                            </Button>  }
                         </Grid>       
                     </Grid>
                 </CardMedia>
