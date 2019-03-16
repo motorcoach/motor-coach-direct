@@ -19,7 +19,7 @@ const styles = theme => ({
    
     listItemText: {
         fontFamily:'Playfair Display',
-        fontSize:'4.75rem',
+        fontSize:'4vw',
         color:'#213669',
         textAlign: "left",
         textTransform: 'uppercase',
