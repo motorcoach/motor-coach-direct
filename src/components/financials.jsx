@@ -240,7 +240,7 @@ const styles = theme => ({
         }
       }, (err, response, body) => {
         sessionStorage.clear();
-        this.props.history.push('/');
+        this.props.history.push('/thanks');
       });
     };
     handleCancel = () => {

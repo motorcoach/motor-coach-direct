@@ -4,6 +4,7 @@ import Home from './pages/home'
 import Card from './pages/card'
 import Other from './pages/other'
 import Start from './pages/start'
+import Thanks from './pages/thanks'
 import { HashRouter  as Router, Route } from "react-router-dom"
 import $ from 'jquery'
 import { MuiThemeProvider } from '@material-ui/core/styles';
@@ -23,7 +24,8 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/card" component={Card} />
           <Route path="/other" component={Other} />
-          <Route path='/start' component={Start} />                 
+          <Route path='/start' component={Start} />  
+          <Route path='/thanks' component={Thanks} />          
         </div>
       </Router>
       </MuiThemeProvider>

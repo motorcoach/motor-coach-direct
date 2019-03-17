@@ -43,7 +43,7 @@ const styles = theme => ({
         padding: '30px',
         textAlign: 'left',
         minHeight: '57vh'
-      },
+    },
     button:{
         width: '200px',
         height: '46px',
@@ -92,7 +92,7 @@ class Benefits extends React.Component {
                     image={liberty}
                     style={{height: '85vh'}}
                 >
-                       <Grid container spacing={24} justify="center" className={classes.getStartedCard}>
+                    <Grid container spacing={24} justify="center" className={classes.getStartedCard}>
                         <Grid item xs={12}>            
                             <Typography component={'span'} className={classes.listItemText} >
                                 A Buyer's Service for your next adventure
